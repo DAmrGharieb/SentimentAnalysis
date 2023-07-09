@@ -7,6 +7,11 @@ from textblob import TextBlob
 from textblob import Word
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud,STOPWORDS
+from sklearn.naive_bayes import BernoulliNB
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 
 
 class TextModel:
@@ -17,6 +22,12 @@ class TextModel:
     def create_model(self,cv_train_reviews,tv_train_reviews,train_sentiments):
         #training the model
         mnb=MultinomialNB()
+        # bnb = BernoulliNB()
+        # lr = LogisticRegression()
+        # svm = SVC()
+        # rf = RandomForestClassifier()
+        # gb = GradientBoostingClassifier()
+
         #fitting the svm for bag of words
         mnb_bow=mnb.fit(cv_train_reviews,train_sentiments)
         #fitting the svm for tfidf features
